@@ -16,10 +16,10 @@ public class TaskModel {
 
     public TaskModel(String title, String description) {
         this.id = UUID.randomUUID();
-        this.title = title;
         this.description = description;
         this.status = TaskStatus.PENDING;
         this.creationDate = LocalDateTime.now();
+        updateTitle(title);
     }
 
     public TaskModel(UUID id, String title, String description, TaskStatus status, LocalDateTime creationDate, LocalDateTime finishDate) {
