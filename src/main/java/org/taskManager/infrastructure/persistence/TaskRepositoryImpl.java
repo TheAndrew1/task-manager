@@ -50,7 +50,7 @@ public class TaskRepositoryImpl implements TaskRepository,PanacheRepository<Task
 
     @Override
     public void updateTask(TaskModel taskModel) {
-        persist(TaskMapper.toEntity(taskModel));
+        getEntityManager().merge(TaskMapper.toEntity(taskModel));
     }
 
     @Override
